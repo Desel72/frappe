@@ -215,7 +215,11 @@ frappe.breadcrumbs = {
 			} else {
 				route = doctype_route;
 			}
-			this.append_breadcrumb_element(`/desk/${route}`, __(doctype), "title-text");
+			this.append_breadcrumb_element(
+				`/desk/${route}`,
+				__(frappe.router.doctype_layout || doctype),
+				"title-text"
+			);
 		}
 
 		let list_crumb = this.$breadcrumbs.find("li a.title-text");
