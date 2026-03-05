@@ -215,14 +215,10 @@ frappe.breadcrumbs = {
 			} else {
 				route = doctype_route;
 			}
-			this.append_breadcrumb_element(
-				`/desk/${route}`,
-				__(frappe.router.doctype_layout || doctype),
-				"title-text"
-			);
+			this.append_breadcrumb_element(`/desk/${route}`, __(doctype), "doctype-text");
 		}
 
-		let list_crumb = this.$breadcrumbs.find("li a.title-text");
+		let list_crumb = this.$breadcrumbs.find("li a.doctype-text");
 		list_crumb.parent().addClass("ellipsis");
 	},
 
